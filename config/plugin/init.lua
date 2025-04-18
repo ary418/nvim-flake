@@ -1,7 +1,4 @@
-vim.opt.number = true
-vim.opt.relativenumber = true
+require("asap")
+require("options")
+require("mappings")
 
-vim.opt.expandtab = true
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
