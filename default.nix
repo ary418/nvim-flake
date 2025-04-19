@@ -5,7 +5,6 @@
   makeWrapper,
   callPackage,
   runCommandLocal,
-  writeText,
   # pkgs
   neovim-unwrapped,
   vimPlugins,
