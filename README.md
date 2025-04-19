@@ -77,8 +77,8 @@ Lua configs in the [config/](./config) directory
 
 ### How it works
 
-Symlinking: The config/ directory is symlinked to the packpath in default.nix. This setup allows you to run nix run on this flake from any location and launch Neovim with all your custom settings applied.
-Non-Overrideable via Nix Modules: Due to the way the configuration is structured, it cannot be overridden using Nix modules. This ensures that your custom settings remain intact and are not inadvertently changed by other parts of the system.
+- Symlinking: The config/ directory is symlinked to the packpath in default.nix. This setup allows you to run nix run on this flake from any location and launch Neovim with all your custom settings applied.
+- Non-Overrideable via Nix Modules: Due to the way the configuration is structured, it cannot be overridden using Nix modules. This ensures that your custom settings remain intact and are not inadvertently changed by other parts of the system.
 
 ## Nix-generated plugins
 
