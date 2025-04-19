@@ -50,9 +50,33 @@ Here's an example of minimal flake using this config
 }
 ```
 
-## Configure
+## Design
 
-Fork this repository 
+> [!NOTE]
+> This section is pretty WIP
+
+All plugins to install are listed in [plugins.nix](./plugins.nix)
+
+Lua configs in the [config/](./config) directory
+ config
+├── plugin
+│   └── init.lua # entry point of configuration plugin
+└── lua
+    ├── libx.lua # shared utility functions
+    ├── asap.lua # things to do ASAP
+    ├── autocmds.lua
+    ├── mappings.lua
+    ├── options # vim.opt assigments
+    │   ├── appearance.lua # purely cosmetic settings
+    │   ├── behavior.lua # behavior, such as files, buffers handling, etc.
+    │   └── formatting.lua # formatting: auto-indent, tab size, etc.
+    └── plugins # FIXME: implement and describe
+        └── init.lua
+
+### How it works
+
+Symlinking: The config/ directory is symlinked to the packpath in default.nix. This setup allows you to run nix run on this flake from any location and launch Neovim with all your custom settings applied.
+Non-Overrideable via Nix Modules: Due to the way the configuration is structured, it cannot be overridden using Nix modules. This ensures that your custom settings remain intact and are not inadvertently changed by other parts of the system.
 
 ## Nix-generated plugins
 
