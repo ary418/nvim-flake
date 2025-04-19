@@ -1,7 +1,11 @@
-# Minimal Neovim flake configured in pure Lua
+# Minimal Neovim flake
 
-## Try It Out
+> [!WARNING]
+> This project is a WIP and is not well documented.
+> For now, the Neovim wrapper, basic options,
+> and partially the README have been completed.
 
+# Try It Out
 You can quickly test this Neovim flake by running it via `nix run`
 ```bash
 $ nix run github:ary418/nvim-flake
