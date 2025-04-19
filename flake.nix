@@ -12,6 +12,8 @@
     in {
       default = neovim-custom;
     });
+
+    formatter = eachSystem (system: nixpkgs.legacyPackages.${system}.alejandra);
   };
 
   inputs = {
