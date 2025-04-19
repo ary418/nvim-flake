@@ -6,6 +6,8 @@
   plugins = with vimPlugins; [
     lualine-nvim
     nvim-web-devicons
+
+    nvim-treesitter.withAllGrammars
   ];
   # Additional packages such as LSPs
   packages = [
