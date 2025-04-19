@@ -3,11 +3,15 @@
   lib,
   symlinkJoin,
   makeWrapper,
+  callPackage,
   runCommandLocal,
   writeText,
   # pkgs
   neovim-unwrapped,
   vimPlugins,
+  # pass via this option plugins that use
+  # options we don't have access, like Stylix colors
+  extraPlugins ? [],
 }: let
   packageName = "mypackage";
 
@@ -17,10 +21,12 @@
     ++ (foldPlugins (next.dependencies or []))
   ) [];
 
+  plugins = callPackage ./plugins.nix {};
+
   startPlugins = with vimPlugins; [
     lz-n
-  ];
-  optPlugins = [];
+  ] ++ extraPlugins ++ plugins.start;
+  optPlugins = plugins.opt;
 
   startPluginsWithDeps = lib.unique (foldPlugins startPlugins);
   optPluginsWithDeps = lib.unique (foldPlugins optPlugins);
