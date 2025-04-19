@@ -1,11 +1,15 @@
 {
   description = "my personal Neovim config flake :D";
 
-  outputs = { self, nixpkgs, neovim-overlay }: let
+  outputs = {
+    self,
+    nixpkgs,
+    neovim-overlay,
+  }: let
     eachSystem = nixpkgs.lib.genAttrs nixpkgs.lib.platforms.all;
   in {
     packages = eachSystem (system: let
-      pkgs = import nixpkgs { inherit system; };
+      pkgs = import nixpkgs {inherit system;};
       neovim-custom = pkgs.callPackage ./. {
         neovim-unwrapped = neovim-overlay.packages.${system}.default;
       };
@@ -30,4 +34,3 @@
     ];
   };
 }
-
