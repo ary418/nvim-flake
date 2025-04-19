@@ -21,12 +21,12 @@
     ++ (foldPlugins (next.dependencies or []))
   ) [];
 
-  plugins = callPackage ./plugins.nix {};
+  dependencies = callPackage ./dependencies.nix {};
 
   startPlugins = with vimPlugins; [
     lz-n
-  ] ++ extraPlugins ++ plugins.start;
-  optPlugins = plugins.opt;
+  ] ++ extraPlugins;
+  optPlugins = dependencies.plugins;
 
   startPluginsWithDeps = lib.unique (foldPlugins startPlugins);
   optPluginsWithDeps = lib.unique (foldPlugins optPlugins);
@@ -57,6 +57,7 @@ in symlinkJoin {
       --add-flags NORC \
       --add-flags '--cmd' \
       --add-flags "'set packpath^=${packpath} | set runtimepath^=${packpath}'" \
+      --prefix PATH : '${lib.makeBinPath dependencies.packages}' \
       --set-default NVIM_APPNAME nvim-custom
   '';
   passthru = {
