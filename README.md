@@ -5,6 +5,14 @@
 > For now, the Neovim wrapper, basic options,
 > and partially the README have been completed.
 
+## Philosophy
+
+- Manage plugins and external dependencies using Nix and lazy-load with lz.n
+- Configuration entirely in Lua
+- Utilizes Neovim's built-in LSP client, with Nix managing language servers
+- Usable on any device with Nix installed, regardless of system settings
+- Uses a minimal set of plugins and leverages the latest capabilities of Neovim's nightly versions
+
 ## Test drive
 
 If you have Nix installed (with [flakes](https://wiki.nixos.org/wiki/Flakes) enabled), you can test drive this by running:
