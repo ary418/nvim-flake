@@ -58,6 +58,7 @@ Here's an example of minimal flake using this config
 All plugins to install are listed in [plugins.nix](./plugins.nix)
 
 Lua configs in the [config/](./config) directory
+```
  config
 ├── plugin
 │   └── init.lua # entry point of configuration plugin
@@ -72,6 +73,7 @@ Lua configs in the [config/](./config) directory
     │   └── formatting.lua # formatting: auto-indent, tab size, etc.
     └── plugins # FIXME: implement and describe
         └── init.lua
+```
 
 ### How it works
 
