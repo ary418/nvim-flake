@@ -5,21 +5,11 @@
 > For now, the Neovim wrapper, basic options,
 > and partially the README have been completed.
 
-# Try It Out
-You can quickly test this Neovim flake by running it via `nix run`
+## Test drive
+
+If you have Nix installed (with [flakes](https://wiki.nixos.org/wiki/Flakes) enabled), you can test drive this by running:
 ```bash
 $ nix run github:ary418/nvim-flake
-```
-
-To enable flakes, on NixOS just add this to system config and do rebuild
-```nix
-nix.settings.experimental-features = [ "nix-command" "flakes" ];
-```
-
-On other distros you can install Nix through Determinate installer, which enables flakes by default
-```bash
-curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | \
-  sh -s -- install
 ```
 
 ## Installation
