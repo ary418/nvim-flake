@@ -4,5 +4,6 @@ require'lze'.load{
   { import = 'plugins.completion' },
   { import = 'plugins.lsp' },
   { import = 'plugins.null_ls' },
+  { import = 'plugins.fzf' },
 }
 
