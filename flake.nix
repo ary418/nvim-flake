@@ -2,9 +2,9 @@
   description = "my personal Neovim config flake :D";
 
   outputs = {
-    self,
     nixpkgs,
     neovim-overlay,
+    ...
   }: let
     supportedSystems = [
       "x86_64-linux"
