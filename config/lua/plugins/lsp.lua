@@ -5,7 +5,7 @@ return {
     local capabilities = require'blink.cmp'.get_lsp_capabilities()
     local lspconfig = require'lspconfig'
 
-    lspconfig.nil_ls.setup{
+    lspconfig.nixd.setup{
       capabilities = capabilities,
     }
   end,

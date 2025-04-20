@@ -18,7 +18,7 @@
   # Additional packages such as
   # LSPs, formatters, linters, static analysis tools
   packages = with pkgs; [
-    nil
+    nixd
     statix
     deadnix
   ];
