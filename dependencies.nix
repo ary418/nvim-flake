@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   # Plugins that will be symlinked in opt/ directory; loaded with lz.n.load()
   plugins = with pkgs.vimPlugins; [
     lualine-nvim

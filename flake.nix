@@ -6,9 +6,15 @@
     nixpkgs,
     neovim-overlay,
   }: let
-    eachSystem = nixpkgs.lib.genAttrs nixpkgs.lib.platforms.all;
+    supportedSystems = [
+      "x86_64-linux"
+      "aarch64-linux"
+      "x86_64-darwin"
+      "aarch64-darwin"
+    ];
+    forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
   in {
-    packages = eachSystem (system: let
+    packages = forAllSystems (system: let
       pkgs = import nixpkgs {inherit system;};
       neovim-custom = pkgs.callPackage ./. {
         neovim-unwrapped = neovim-overlay.packages.${system}.default;
@@ -17,7 +23,7 @@
       default = neovim-custom;
     });
 
-    formatter = eachSystem (system: nixpkgs.legacyPackages.${system}.alejandra);
+    formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
   };
 
   inputs = {
