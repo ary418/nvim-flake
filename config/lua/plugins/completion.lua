@@ -1,7 +1,11 @@
-require'lz.n'.load{
-  'blink.cmp',
-  dependencies = { 'friendly-snippets' },
+return {
 
+{
+  'friendly-snippets',
+  dep_of = { 'blink.cmp' },
+},
+{
+  'blink.cmp',
   after = function()
     vim.diagnostic.config{
       update_in_insert = true,
@@ -18,6 +22,8 @@ require'lz.n'.load{
 
       signature = { enabled = true },
     }
-  end
+  end,
+}
+
 }
 

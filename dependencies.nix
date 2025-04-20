@@ -1,7 +1,8 @@
 {
   vimPlugins,
-  # LSPs
   nil,
+  statix,
+  deadnix,
   ...
 }: {
   # Plugins that will be symlinked in opt/ directory; loaded with lz.n.load()
@@ -14,9 +15,14 @@
     nvim-lspconfig
     blink-cmp
     friendly-snippets
+
+    none-ls-nvim
   ];
-  # Additional packages such as LSPs
+  # Additional packages such as
+  # LSPs, formatters, linters, static analysis tools
   packages = [
     nil
+    statix
+    deadnix
   ];
 }

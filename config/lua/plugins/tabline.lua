@@ -1,9 +1,16 @@
-require('lz.n').load({
+return {
+
+{
+  'nvim-web-devicons',
+  on_require = 'nvim-web-devicons',
+},
+
+{
   'lualine.nvim',
   event = 'VimEnter',
-  dependencies = { 'nvim-web-devicons' },
+  dependencies = {  },
   after = function()
-    require('lualine').setup {
+    require'lualine'.setup {
       options = {
         component_separators = { left = ' ', right = ' ' },
         section_separators = { left = ' ', right = ' ' },
@@ -18,5 +25,7 @@ require('lz.n').load({
       },
     }
   end,
-})
+},
+
+}
 

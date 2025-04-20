@@ -25,7 +25,7 @@
 
   startPlugins = with vimPlugins;
     [
-      lz-n
+      lze
     ]
     ++ extraPlugins;
   optPlugins = dependencies.plugins;

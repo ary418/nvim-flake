@@ -1,5 +1,8 @@
-require('plugins.treesitter')
-require('plugins.tabline')
-require('plugins.completion')
-require('plugins.lspconfig')
+require'lze'.load{
+  { import = 'plugins.treesitter' },
+  { import = 'plugins.tabline' },
+  { import = 'plugins.completion' },
+  { import = 'plugins.lsp' },
+  { import = 'plugins.null_ls' },
+}
 

@@ -1,6 +1,6 @@
-require'lz.n'.load{
+return {
   'nvim-lspconfig',
-  dependencies = { 'blink.cmp' },
+  on_plugin = { 'blink.cmp' },
   after = function()
     local capabilities = require'blink.cmp'.get_lsp_capabilities()
     local lspconfig = require'lspconfig'
@@ -8,8 +8,6 @@ require'lz.n'.load{
     lspconfig.nil_ls.setup{
       capabilities = capabilities,
     }
-
-    print'lsp init'
   end,
 }
 
