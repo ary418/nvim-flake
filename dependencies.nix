@@ -12,6 +12,9 @@
     none-ls-nvim
 
     fzf-lua
+
+    leap-nvim
+    vim-repeat
   ];
   # Additional packages such as
   # runtime dependencies, LSPs, formatters, linters, static analysis tools

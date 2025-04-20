@@ -5,5 +5,6 @@ require'lze'.load{
   { import = 'plugins.lsp' },
   { import = 'plugins.null_ls' },
   { import = 'plugins.fzf' },
+  { import = 'plugins.leap' },
 }
 
