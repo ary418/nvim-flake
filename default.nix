@@ -54,12 +54,17 @@ in
     name = "neovim-custom";
     paths = [neovim-unwrapped];
     nativeBuildInputs = [makeWrapper];
-    postBuild = ''
+    postBuild = let
+      cmd = lib.concatStringsSep " | " [
+        "set packpath^=${packpath}"
+        "set runtimepath^=${packpath}"
+      ];
+    in ''
       wrapProgram $out/bin/nvim \
         --add-flags '-u' \
         --add-flags NORC \
         --add-flags '--cmd' \
-        --add-flags "'set packpath^=${packpath} | set runtimepath^=${packpath}'" \
+        --add-flags "'${cmd}'" \
         --prefix PATH : '${lib.makeBinPath dependencies.packages}' \
         --set-default NVIM_APPNAME nvim-custom
     '';
