@@ -58,6 +58,7 @@ in
       cmd = lib.concatStringsSep " | " [
         "set packpath^=${packpath}"
         "set runtimepath^=${packpath}"
+        "lua vim.loader.enable()"
       ];
     in ''
       wrapProgram $out/bin/nvim \
