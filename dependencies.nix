@@ -1,12 +1,9 @@
 {
-  vimPlugins,
-  nil,
-  statix,
-  deadnix,
+  pkgs,
   ...
 }: {
   # Plugins that will be symlinked in opt/ directory; loaded with lz.n.load()
-  plugins = with vimPlugins; [
+  plugins = with pkgs.vimPlugins; [
     lualine-nvim
     nvim-web-devicons
 
@@ -20,7 +17,7 @@
   ];
   # Additional packages such as
   # LSPs, formatters, linters, static analysis tools
-  packages = [
+  packages = with pkgs; [
     nil
     statix
     deadnix
